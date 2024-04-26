@@ -1,0 +1,14 @@
+EJECUCION DEL ARCHIVO Masivo.sh
+
+se debe dirigir a la carpeta donde este guardado el archivo, y alli debe abrir la terminal
+
+ejecutar el siguiente comando bash Masivo.sh
+
+
+ANTES DE LA EJECUCIÓN
+
+Se debe primero configurar la ruta de los archivos rinex
+1. abra el archivo Masivo.sh en un editor de texto
+2. En la linea 4 del codigo debe configurar la ruta de la ubicacion de los archivos RINEX
+3. En la linea 40 se encuentra el codigo anubis que ejecuta el script, puede cambiar la ejecucion de esta linea.
+4. por defecto la linea ejecuta el control de calidad para datos navegados y observados, es decir que en la ruta configurada en la linea 4 se deben encontrar tanto rinex observados y navegados, de lo contrario el script no se ejecutara.
