@@ -4,10 +4,14 @@
 carpeta="/home/yesid-guerrero/Documentos/RINEX"
 
 
-#Creamos un array vacio
-Estaciones=()
+#Creamos un array vacio, 
+#Opcion a ----> Estaciones=()
+#Opcion b ----> Estaciones=(boga0960 aep11010)
+Estaciones=(boga0960 aep11010 TUNA1010)
 
+:'
 #Recorremos la carpeta y guardamos en el array las estaciones que se encuentran para procesar
+#En caso de utilizar la opcion b se debe comentar este for
 for archivo_path in "$carpeta"/*; do
 	#Seleccionamos el nombre de cada archivo
 	archivo=$(basename "$archivo_path")
@@ -21,6 +25,7 @@ for archivo_path in "$carpeta"/*; do
 		Estaciones+=("$Primeras8_letras")
 	fi
 done
+'
 
 #Cuenta la cantidad de estaciones en la carpeta
 Cantidad_Estaciones=${#Estaciones[@]}
@@ -45,7 +50,7 @@ for e in "${!Estaciones[@]}";do
 	echo "Ejecutando Comando con: ${Estaciones[$e]}"
 	$Comando_a_correr
 
-	Comando_plotear="/home/yesid-guerrero/Documentos/Anubis/plot_Anubis-2.3-2023-03-06/plot_Anubis.pl --ifile $Carpeta_Salida/$Salida --plot=$Imagen --all --all --title=$Salida"
+	Comando_plotear="plot_Anubis.pl --ifile $Carpeta_Salida/$Salida --plot=$Imagen --all --all --title=$Salida"
 	echo "Ejecutando Comando con: ${Estaciones[$e]}"
 	$Comando_plotear
 
